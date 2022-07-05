@@ -1,0 +1,38 @@
+<template>
+  <div class="main flex-col flex-x-center flex-y-center">
+    <div class="center">
+      <!--头部-->
+      <my-head/>
+      <div class="location flex-row flex-left flex-y-center ">
+        <span class="location-inner flex-row flex-space-between">
+          <p>您当前的位置：</p>
+          <p>联系我们</p>
+        </span>
+      </div>
+         <div class="photonews flex-col flex-y-center flex-x-center">
+        <div class="flex-col">
+          <p class="photonews-title-1">联系我们</p>
+          <span class="flex-row  flex-space-between ">
+            <p class="photonews-title-2">发表时间：2017-09-13</p>&nbsp;&nbsp;
+            <p class="photonews-title-2">作者：七中宣传组</p>&nbsp;&nbsp;
+            <p class="photonews-title-2">浏览次数：121</p>
+          </span>
+        </div>
+        <div class="contact-us flex-row flex-space-between">
+        <div class=" flex-col flex-left">
+          <p class="contact-us-r"> 学校邮箱：gzqz1888@126.com</p>
+         
+          <p class="contact-us-r">电    话：(020)87774521</p>
+          <p class="contact-us-r"> 地    址：广州越秀区烟墩路28号</p>
+          <p class="contact-us-r"> 邮    编：510080</p>
+        </div>
+        <img src="../../../static/img/code2.jpg" alt="">
+        </div>
+      </div>
+      <!--底部-->
+      <my-bottom/>
+    </div>
+  </div>
+</template>
+
+

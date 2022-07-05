@@ -1,0 +1,111 @@
+<template>
+            <div style="margin-left: 30%;margin-right: 30%">
+                <el-card class="box-card">
+                    <el-row>
+                        <div>
+                            <div>
+                                <el-image class="identification_photo" :src="this.avatarUrl" alt="" style="margin-left: 40%;margin-right: 40%"/>
+                            </div>
+                        </div></el-row>
+                    <el-divider></el-divider>
+                    <div class="Info">
+                        <div style="margin-top: 20px">姓名：{{studentInfo.name}}</div>
+                        <div style="margin-top: 20px" >学号：{{studentInfo.id}}</div>
+                        <div style="margin-top: 20px">性别：{{studentInfo.sex}}</div>
+                        <div style="margin-top: 20px">年龄：{{studentInfo.age}}</div>
+                        <div style="margin-top: 20px">电话：{{studentInfo.phoneNum}}</div>
+                        <div style="margin-top: 20px">email：{{studentInfo.email}}</div>
+                        <div style="margin-top: 20px">身份证号：{{studentInfo.idCard}}</div>
+                        <div style="margin-top: 20px">民族：{{studentInfo.nation}}</div>
+                    </div>
+                </el-card>
+            </div>
+</template>
+
+<script>
+    export default {
+        name: "Personal",
+  data() {
+    return {
+      studentInfo: [
+        {
+          id: "1",
+          name: "2",
+          sex: "3",
+          age: "4",
+          phoneNum: "5",
+          email: "6",
+          idCard: "7",
+          nation: "8"
+        }
+      ],
+      avatarUrl: '../../../static/img/code2.jpg'
+    };
+  },
+        methods: {
+            // handleClick(tab, event) {
+            //     console.log(tab, event);
+            // },
+            // initCourses(classId) {
+            //     this.getRequest('/web/student/courses?classId=' + classId).then(resp => {
+            //         console.log(resp.data);
+            //         this.coursesList = resp.data;
+            //         for (let j = 0; j < this.coursesList.length; j++) {
+            //             if (this.coursesList[j].status === 1) {
+            //                 this.coursesList[j].status = '必修';
+            //             } else if (this.coursesList[j].status === 2) {
+            //                 this.coursesList[j].status = '选修';
+            //             } else if (this.coursesList[j].status === 3) {
+            //                 this.coursesList[j].status = '公选';
+            //             }
+            //         }
+            //     })
+            // },
+            // initStudents() {
+            //     this.getRequest('/web/student/personalInfo').then(resp => {
+            //         this.studentInfo = resp.data;
+            //         if (this.studentInfo.avatar === '') {
+            //             this.avatarUrl = require('../../assets/user_pic_middle.gif');
+            //         }
+            //         this.initCourses(this.studentInfo.classes.id);
+            //     })
+            // }
+        },
+    }
+</script>
+
+<style scoped>
+    .activeName{
+        width: 100%;
+        height: 100%;
+    }
+
+    .box-card {
+        width: 100%;
+        height: 100%;
+    }
+
+
+    .grid-content {
+        border-radius: 4px;
+        min-height: 36px;
+    }
+
+    .el-dropdown-link {
+        cursor: pointer;
+        color: #409EFF;
+    }
+    .el-icon-arrow-down {
+        font-size: 12px;
+    }
+    .identification_photo{
+        width: 120px;
+        height: 140px;
+        margin-left: 160px;
+    }
+    .Info{
+        width: 100%;
+        height: 100%;
+        margin-left: 100px;
+    }
+</style>
