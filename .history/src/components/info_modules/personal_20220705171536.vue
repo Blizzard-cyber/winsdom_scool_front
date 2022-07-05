@@ -43,43 +43,30 @@
       }
     };
   },
-  mounted(){
+  mounted() {
     this.getInfo();
   },
   methods: {
-     getInfo() {
-      this.$axios.get('http://127.0.0.1:8080//show_context',
-      {
-        params: {
-          ID:1
-        }
-      })
-    .then(res => {
-     this.info.name = res.data;
-      console.log(res.data);
-    })
-    },
-
-    open() {
-      this.$prompt('请输入新联系方式', '提示', {
-        confirmButtonText: '确定',
-        cancelButtonText: '取消',
-        inputPattern: /[\w!#$%&'*+/=?^_`{|}~-]+(?:\.[\w!#$%&'*+/=?^_`{|}~-]+)*@(?:[\w](?:[\w-]*[\w])?\.)+[\w](?:[\w-]*[\w])?/,
-        inputErrorMessage: '格式不正确'
-      }).then(({ value }) => {
-        this.$message({
-          type: 'success',
-          message: '你的联系方式是: ' + value
+         
+      open() {
+        this.$prompt('请输入新联系方式', '提示', {
+          confirmButtonText: '确定',
+          cancelButtonText: '取消',
+          inputPattern: /[\w!#$%&'*+/=?^_`{|}~-]+(?:\.[\w!#$%&'*+/=?^_`{|}~-]+)*@(?:[\w](?:[\w-]*[\w])?\.)+[\w](?:[\w-]*[\w])?/,
+          inputErrorMessage: '格式不正确'
+        }).then(({ value }) => {
+          this.$message({
+            type: 'success',
+            message: '你的联系方式是: ' + value
+          });
+        }).catch(() => {
+          this.$message({
+            type: 'info',
+            message: '取消输入'
+          });       
         });
-      }).catch(() => {
-        this.$message({
-          type: 'info',
-          message: '取消输入'
-        });
-      });
-    },
-   
-  }
+      }
+    
             // handleClick(tab, event) {
             //     console.log(tab, event);
             // },
@@ -107,7 +94,7 @@
             //         this.initCourses(this.studentInfo.classes.id);
             //     })
             // }
-        
+        },
     }
 </script>
 

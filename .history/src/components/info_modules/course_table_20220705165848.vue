@@ -285,7 +285,23 @@
         }]
       }
   },
-  
+  mounted: {
+    let self=this;
+      this.$axios.get('http://127.0.0.1:8000/api/show_context',
+       {
+        params: {
+         ID:this.id
+        }
+      }
+      )
+    .then((response) => {
+      var res=response.data.data[0];
+      self.Imgresult = res.fields;
+
+      
+
+
+  },
     methods: {
       handleCommand(command) {
         this.$message('click on item ' + command);

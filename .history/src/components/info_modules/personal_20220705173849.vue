@@ -48,7 +48,7 @@
   },
   methods: {
      getInfo() {
-      this.$axios.get('http://127.0.0.1:8080//show_context',
+      this.$axios.get('http://127.0.0.1:8000/api/show_context',
       {
         params: {
           ID:1

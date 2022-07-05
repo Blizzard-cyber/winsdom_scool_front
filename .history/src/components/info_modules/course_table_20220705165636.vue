@@ -285,7 +285,13 @@
         }]
       }
   },
-  
+  mounted: {
+    this.$axios.get('/api/get_course_info').then(res => {
+      this.tableData = res.data.data;
+    })
+
+
+  },
     methods: {
       handleCommand(command) {
         this.$message('click on item ' + command);

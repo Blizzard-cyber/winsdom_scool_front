@@ -11,9 +11,7 @@ import ViewUI from 'view-design';
 import 'view-design/dist/styles/iview.css';
 import axios from 'axios';
 import VueAxios from "vue-axios";
-import jsCookie from 'js-cookie';
 
-Vue.prototype.$cookie = jsCookie; 
 Vue.use(VueAxios, axios)
 Vue.use(ViewUI);
 Vue.config.productionTip = false

@@ -61,17 +61,16 @@ export default {
   methods: {
     dosubmit: function () {
       let params = {
-        sid: this.uname,
+        uname: this.uname,
         password: this.password
       };
-      this.$axios.post('http://127.0.0.1:8080/student', params).then(res => {
+      this.$axios.post('/api/login', params).then(res => {
         if (res.data.code == 200) {
           this.$message({
             message: '登录成功',
             type: 'success'
           });
-          this.$cookie.set('ID', this.id, { expires: 7 });
-          // this.$cookie.get('ID')
+          this.$cookie.set('ID', this.id, { expires: 7});
           this.$router.push('/');
         } else {
           this.$message({

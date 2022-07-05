@@ -44,11 +44,7 @@
     };
   },
   mounted(){
-    this.getInfo();
-  },
-  methods: {
-     getInfo() {
-      this.$axios.get('http://127.0.0.1:8080//show_context',
+    this.$axios.get('http://127.0.0.1:8000/api/show_context',
       {
         params: {
           ID:1
@@ -58,7 +54,8 @@
      this.info.name = res.data;
       console.log(res.data);
     })
-    },
+  },
+  methods: {
 
     open() {
       this.$prompt('请输入新联系方式', '提示', {
@@ -78,7 +75,17 @@
         });
       });
     },
-   
+    getInfo() {
+      this.$axios.get('http://127.0.0.1:8000/api/show_context'),
+        {
+          params: {
+            ID: 1
+          }
+        }
+        .then(response => {
+          this.info = response.data;
+        })
+    }
   }
             // handleClick(tab, event) {
             //     console.log(tab, event);
