@@ -30,7 +30,7 @@
                    
                   <div style="padding: 14px;">
                   
-                      <router-link :to="{path:'/Inside'}" class="flex-row flex-space-between" >新闻内容</router-link>
+                      <router-link :to="{path:'/News'}" class="flex-row flex-space-between" >新闻内容</router-link>
                       
                   </div>
                 </el-card>
@@ -62,7 +62,7 @@
 
             <div class="show-invite-inner flex-col flex-space-between" >
               <span v-for="item in items3">
-                <router-link :to="{path:'/Inside'}" class="flex-row flex-space-between" >
+                <router-link :to="{path:'/News'}" class="flex-row flex-space-between" >
                 <p>{{item.message}}</p>
                 <p>2017-07-10</p>
               </router-link>

@@ -11,15 +11,12 @@
   },
   "dependencies": {
     "anywhere": "^1.4.0",
-    "axios": "^0.27.2",
-    "cookie_js": "^1.4.2",
     "echarts": "^5.3.3",
     "element-ui": "^2.15.9",
     "iquery": "0.0.2",
     "jquery": "^3.2.1",
     "view-design": "^4.7.0",
     "vue": "^2.5.2",
-    "vue-axios": "^3.4.1",
     "vue-router": "^3.0.1"
   },
   "devDependencies": {

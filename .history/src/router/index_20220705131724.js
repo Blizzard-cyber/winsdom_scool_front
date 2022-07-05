@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import Head from '@/components/comment/head'
 import Bottom from '@/components/comment/bottom'
 import Index from '@/components/index'
-import News from '@/components/news'
+import Inside from '@/components/inside'
 import Login from '@/components/login'
 
 import PhotoNews from '@/components/dynamic/photo-news'
@@ -32,9 +32,9 @@ export default new Router({
         name: 'Index',
         component: Index
     }, {
-        path: '/Login',
-        name: 'Login',
-        component: Login
+        path: '/First',
+        name: 'First',
+        component: First
     }, {
         path: '/Head',
         name: 'Head',
@@ -44,9 +44,9 @@ export default new Router({
         name: 'Bottom',
         component: Bottom
     }, {
-        path: '/News',
-        name: 'News',
-        component: News
+        path: '/Inside',
+        name: 'Inside',
+        component: Inside
     },
     {
         path: '/Info',
