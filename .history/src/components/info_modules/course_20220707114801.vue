@@ -102,7 +102,7 @@ export default {
             }
           ],
           filterMethod(value, row) {
-            return row.credit.indexOf(value) > -1;
+            return row.cridts.indexOf(value) > -1;
           }
         },
         {
@@ -125,12 +125,12 @@ export default {
           filterMultiple: false,
           filterMethod(value, row) {
             if (value === 1) {
-              return row.grade < 60;
+              return row.remark < 60;
             } else if (value === 2) {
-              return row.grade >= 60 && row.grade < 90;
+              return row.reamrk >= 60 && row.remark < 90;
             }
             else if (value === 3) {
-              return row.grade >= 90;
+              return row.remark >= 90;
             }
           }
         },

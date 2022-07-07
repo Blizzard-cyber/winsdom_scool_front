@@ -68,7 +68,7 @@
               <el-button  @click="jumptextmore" style="float: right; padding: 3px 0" type="text">More</el-button>
             </div>
           <div class="show-invite flex-row flex-space-between">
-            
+            <!-- <img src="../../static/img/triangle.png" alt=""> -->
 
             <div class="show-invite-inner flex-col flex-space-between" >
               <span v-for="item in items3">
@@ -77,7 +77,7 @@
                   query:
                 {
                         id: item.id,
-                      }}" >
+                      }}" class="flex-row flex-space-between" >
                 <span>{{item.headline}}</span>
                 <br/>
                 <br/>

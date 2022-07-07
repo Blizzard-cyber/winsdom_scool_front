@@ -12,7 +12,7 @@
       </div>
       <!--轮播图-->
       <div class="block">
-        <el-carousel height="350px">
+        <el-carousel height="550px">
           <el-carousel-item v-for="item in src1" :key="item">
             <el-image :src=item></el-image>
           </el-carousel-item>
@@ -20,7 +20,7 @@
     </div>
       <div class="news flex-row flex-space-between">
       </div>
-      <!--焦点新闻-->
+      <!--学校公告，招聘招生-->
       <div class="show flex-row flex-left flex-space-between">
         <div class="flex-col flex-left">
           <el-card class="box-card">
@@ -60,7 +60,7 @@
           </div> -->
         </el-card> 
         </div>
-        <!--重点新闻-->
+        <!--招聘招生-->
         <div class="flex-col flex-left flex-space-between">
            <el-card class="box-card">
             <div slot="header" class="clearfix">
@@ -68,7 +68,7 @@
               <el-button  @click="jumptextmore" style="float: right; padding: 3px 0" type="text">More</el-button>
             </div>
           <div class="show-invite flex-row flex-space-between">
-            
+            <img src="../../static/img/triangle.png" alt="">
 
             <div class="show-invite-inner flex-col flex-space-between" >
               <span v-for="item in items3">
@@ -77,10 +77,8 @@
                   query:
                 {
                         id: item.id,
-                      }}" >
+                      }}" class="flex-row flex-space-between" >
                 <span>{{item.headline}}</span>
-                <br/>
-                <br/>
                 <!-- <p>{{item}}</p> -->
                 
               </router-link>
@@ -154,9 +152,8 @@ export default {
           //   this.items2.push(imgnews[i]);
           //   console.log(this.items2)
           // }
-          if (i < 5) {
-            this.src1.push(newsimage);
-          }
+         
+         this.src1.push(newsimage);
           if(i==5||i==2){
             this.items0.push(res.data[i])
             
@@ -190,7 +187,7 @@ export default {
 <style>
 .el-carousel{
   width: 1000px;
-  margin-left: 0px;
+  margin-left: -100px;
 
 }
   .el-carousel__item h3 {
