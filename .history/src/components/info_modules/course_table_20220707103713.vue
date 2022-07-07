@@ -4,12 +4,12 @@
      <login-head/>
      <el-page-header @back="goBack" content="课程表"></el-page-header>
      <div class="box">
-      <span>当前学期为{{semester}}</span>
+      <span>当前学期为{{this.semester}}</span>
       <div class="box-title1"> 
       <el-dropdown size="small" split-button type="primary"  @command="handleCommand">
         切换学期
         <el-dropdown-menu slot="dropdown">
-          <el-dropdown-item command="1">2020-2021 1</el-dropdown-item>
+          <el-dropdown-item command=" 1">2020-2021 1</el-dropdown-item>
           <el-dropdown-item command="2">2020-2021 2</el-dropdown-item>
           <el-dropdown-item command="3">2021-2022 1</el-dropdown-item>
           <el-dropdown-item command="4">2021-2022 2</el-dropdown-item>
@@ -435,7 +435,7 @@
       let cookie_id = this.$cookie.get('ID');
       let coursetable=[]
       this.$axios.get('http://127.0.0.1:8080/courseTable/' + cookie_id + '/' + this.semester).then(res => {
-          // this.semester=res.data.semester;
+
         for (let i = 0; i < res.data.length; i++) {
           let course = {};
           //console.log(course);

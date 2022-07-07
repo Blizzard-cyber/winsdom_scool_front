@@ -4,12 +4,12 @@
      <login-head/>
      <el-page-header @back="goBack" content="课程表"></el-page-header>
      <div class="box">
-      <span>当前学期为{{semester}}</span>
+      <span>当前学期为{{this.semester}}</span>
       <div class="box-title1"> 
       <el-dropdown size="small" split-button type="primary"  @command="handleCommand">
         切换学期
         <el-dropdown-menu slot="dropdown">
-          <el-dropdown-item command="1">2020-2021 1</el-dropdown-item>
+          <el-dropdown-item command=" 1">2020-2021 1</el-dropdown-item>
           <el-dropdown-item command="2">2020-2021 2</el-dropdown-item>
           <el-dropdown-item command="3">2021-2022 1</el-dropdown-item>
           <el-dropdown-item command="4">2021-2022 2</el-dropdown-item>
@@ -404,30 +404,30 @@
       
       },
     
-    getweek(num,col,course) {
+    getweek(num, course) {
       // console.log(num);
       // console.log(course);
       // console.log(this.tableData[0]);
       if (num === '1') {
-        this.tableData[col]['mon'] = course.coursename+'\n'+course.classroom;
+        this.tableData[0]['mon'] = course.coursename+'\n'+course.classroom;
       }
       else if(num=== '2'){
-        this.tableData[col]['thu'] = course.coursename+'\n'+course.classroom;
+        this.tableData[1]['tue'] = course.coursename+'\n'+course.classroom;
       }
       else if(num=== '3'){
-        this.tableData[col]['wes'] = course.coursename+'\n'+course.classroom;
+        this.tableData[2]['wed'] = course.coursename+'\n'+course.classroom;
       }
       else if(num=== '4'){
-        this.tableData[col]['fur'] = course.coursename+'\n'+course.classroom;
+        this.tableData[3]['thu'] = course.coursename+'\n'+course.classroom;
       }
       else if(num=== '5'){
-        this.tableData[col]['fri'] = course.coursename+'\n'+course.classroom;
+        this.tableData[4]['fri'] = course.coursename+'\n'+course.classroom;
       }
       else if(num=== '6'){
-        this.tableData[col]['sta'] = course.coursename+'\n'+course.classroom;
+        this.tableData[5]['sat'] = course.coursename+'\n'+course.classroom;
       }
       else if(num=== '7'){
-        this.tableData[col]['sun'] = course.coursename+'\n'+course.classroom;
+        this.tableData[6]['sun'] = course.coursename+'\n'+course.classroom;
       }
     },
    
@@ -435,7 +435,7 @@
       let cookie_id = this.$cookie.get('ID');
       let coursetable=[]
       this.$axios.get('http://127.0.0.1:8080/courseTable/' + cookie_id + '/' + this.semester).then(res => {
-          // this.semester=res.data.semester;
+
         for (let i = 0; i < res.data.length; i++) {
           let course = {};
           //console.log(course);
@@ -465,22 +465,22 @@
           for (let i = 0; i < stutime.length; i++) {
            
             if (stutime[i][1] === '1-2') {
-              this.getweek(stutime[i][0],0, coursetable[index]);
+              this.getweek(stutime[i][0], coursetable[index]);
             }
             else if (stutime[i][1] === '3-4') {
-              this.getweek(stutime[i][0],1, coursetable[index]);
+              this.getweek(stutime[i][0], coursetable[index]);
             }
             else if (stutime[i][1] === '5-6') {
-              this.getweek(stutime[i][0],2, coursetable[index]);
+              this.getweek(stutime[i][0], coursetable[index]);
             }
             else if (stutime[i][1] === '7-8') {
-              this.getweek(stutime[i][0],3, coursetable[index]);
+              this.getweek(stutime[i][0], coursetable[index]);
             }
             else if (stutime[i][1] === '9-10') {
-              this.getweek(stutime[i][0],4, coursetable[index]);
+              this.getweek(stutime[i][0], coursetable[index]);
             }
             else {
-              this.getweek(stutime[i][0],5, coursetable[index]);
+              this.getweek(stutime[i][0], coursetable[index]);
             }
           }
         }
@@ -510,18 +510,17 @@
     },
     gettextbook() {
       for (let i = 0; i < this.tableData_info.length; i++) {
-        
+        console.log(this.tableData_info[i].textbook_id)
         if (this.tableData_info[i].textbook_id) {
           this.$axios.get('http://localhost:8080/courseTable/textbook/' + this.tableData_info[i].textbook_id).then(res => {
             this.book.push(res.data);
-            console.log(this.book)
           })
         }
-        else if(this.tableData_info[i].textbook_id===undefined) {
+        else {
           this.book.push('');
         }
       }
-      //console.log(this.book)
+      console.log(this.book)
     },
     
       goBack() {

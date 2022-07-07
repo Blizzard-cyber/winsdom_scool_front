@@ -4,7 +4,7 @@
      <login-head/>
      <el-page-header @back="goBack" content="课程表"></el-page-header>
      <div class="box">
-      <span>当前学期为{{semester}}</span>
+      <span>当前学期为{{this.semester}}</span>
       <div class="box-title1"> 
       <el-dropdown size="small" split-button type="primary"  @command="handleCommand">
         切换学期
