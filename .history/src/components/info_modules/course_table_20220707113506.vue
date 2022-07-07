@@ -152,13 +152,13 @@
           <el-table-column
             prop="week"
             label="上课周次"
-            width="70"
+            width="50"
             align="center">
           </el-table-column>
           <el-table-column
             prop="textbook"
             label="教材"
-            width="200"
+            width="230"
             align="center">
             <!-- <template slot-scope="scope">
                             <a @click="cancelDialog(scope.row)" style="color:blue;cursor:pointer">{{scope.row.textbook}}</a>
@@ -223,7 +223,7 @@
 .box-title1{
   display: inline-block;
   align-items: center;
-  margin-left: -980px;
+  margin-left: -850px;
   margin-top: 30px;
 }
 /* .box-title2{

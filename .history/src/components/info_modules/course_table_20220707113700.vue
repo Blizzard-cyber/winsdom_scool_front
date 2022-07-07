@@ -223,7 +223,7 @@
 .box-title1{
   display: inline-block;
   align-items: center;
-  margin-left: -980px;
+  margin-left: -9800px;
   margin-top: 30px;
 }
 /* .box-title2{

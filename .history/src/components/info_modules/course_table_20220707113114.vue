@@ -128,7 +128,7 @@
           <el-table-column
             prop="credit"
             label="学分"
-            width="30"
+            width="100"
             align="center">
           </el-table-column>
           <el-table-column
@@ -151,14 +151,14 @@
           </el-table-column>
           <el-table-column
             prop="week"
-            label="上课周次"
-            width="70"
+            label="上课周期"
+            width="100"
             align="center">
           </el-table-column>
           <el-table-column
             prop="textbook"
             label="教材"
-            width="200"
+            width="100"
             align="center">
             <!-- <template slot-scope="scope">
                             <a @click="cancelDialog(scope.row)" style="color:blue;cursor:pointer">{{scope.row.textbook}}</a>
@@ -223,7 +223,7 @@
 .box-title1{
   display: inline-block;
   align-items: center;
-  margin-left: -980px;
+  margin-left: -850px;
   margin-top: 30px;
 }
 /* .box-title2{
@@ -523,8 +523,8 @@
      // console.log(id)
       if (id) {
           this.$axios.get('http://localhost:8080/courseTable/textbook/' + id).then(res => {
-            this.books=res.data;
-           console.log(this.books)
+            this.books.push(res.data);
+           console.log(this.book)
           })
         }
         else {

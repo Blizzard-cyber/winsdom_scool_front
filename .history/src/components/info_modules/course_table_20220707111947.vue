@@ -128,7 +128,7 @@
           <el-table-column
             prop="credit"
             label="学分"
-            width="30"
+            width="100"
             align="center">
           </el-table-column>
           <el-table-column
@@ -151,14 +151,14 @@
           </el-table-column>
           <el-table-column
             prop="week"
-            label="上课周次"
-            width="70"
+            label="上课周期"
+            width="100"
             align="center">
           </el-table-column>
           <el-table-column
             prop="textbook"
             label="教材"
-            width="200"
+            width="100"
             align="center">
             <!-- <template slot-scope="scope">
                             <a @click="cancelDialog(scope.row)" style="color:blue;cursor:pointer">{{scope.row.textbook}}</a>
@@ -166,31 +166,31 @@
 
             <template slot-scope="scope">
               <div>
-                 <a @click="drawer = true;getbook(scope.row.textbook)" style="color:blue;cursor:pointer">{{scope.row.textbook}}</a>
+                 <a @click="drawer=true" style="color:blue;cursor:pointer">{{scope.row.textbook}}</a>
                 <Drawer :closable="false" width="640" v-model="drawer">
                   <P :style="pStyle">教材信息</p>
-                  <div class="demo-drawer-profile" >
+                  <!-- <div class="demo-drawer-profile" >
                     <Col span="24">
-                        ISBN: {{books.id}}
+                        ISBN: {{book.id}}
                     </Col>
                     <Col span="24">
-                        书名: {{books.name}}
+                        书名: {{book.name}}
                     </Col>
                     <Col span="24">
-                        作者: {{books.author}}
+                        作者: {{book.author}}
                     </Col>
                     <Col span="24">
-                        出版时间: {{books.time}}
-                    </Col>
-
-                    <Col span="24">
-                        出版社: {{books.press}}
-                    </Col>
-                    <Col span="24">
-                        版本: {{books.version}}
+                        出版时间: {{book.time}}
                     </Col>
 
-            </div>
+                    <Col span="24">
+                        出版社: {{book.press}}
+                    </Col>
+                    <Col span="24">
+                        版本: {{book.version}}
+                    </Col>
+
+            </div> -->
             <Divider />
             </Drawer>
             </div>
@@ -223,7 +223,7 @@
 .box-title1{
   display: inline-block;
   align-items: center;
-  margin-left: -980px;
+  margin-left: -850px;
   margin-top: 30px;
 }
 /* .box-title2{
@@ -499,8 +499,9 @@
           course['title'] = res.data[i].teacher.title;
           course['week'] = res.data[i].courseTime.weeks;
           if (res.data[i].textbook) {
-            course['textbook']=res.data[i].textbook.name+':'+res.data[i].textbook.id;
-            
+            course['textbook']['name']=res.data[i].textbook.name;
+            course['textbook']['id'] = res.data[i].textbook.id;
+            console.log(course.textbook)
            
             // course['textbook'] = res.data[i].textbook.name+res.data[i].textbook.id;
             // course['textbook_id'] = res.data[i].textbook.id;
@@ -516,23 +517,21 @@
         //this.gettextbook();
       })
     },
-    getbook(string) {
-      let arr = string.split(':')
-      //console.log(arr)
-      let id = arr[1];
-     // console.log(id)
-      if (id) {
-          this.$axios.get('http://localhost:8080/courseTable/textbook/' + id).then(res => {
-            this.books=res.data;
-           console.log(this.books)
-          })
-        }
-        else {
-          this.books.push('');
-        }
-      
-      
-    },
+    // gettextbook() {
+    //   for (let i = 0; i < this.tableData_info.length; i++) {
+        
+    //     if (this.tableData_info[i].textbook_id) {
+    //       this.$axios.get('http://localhost:8080/courseTable/textbook/' + this.tableData_info[i].textbook_id).then(res => {
+    //         this.books.push(res.data);
+    //        // console.log(this.book)
+    //       })
+    //     }
+    //     else if(this.tableData_info[i].textbook_id===undefined) {
+    //       this.books.push('');
+    //     }
+    //   }
+    //   console.log(this.books)
+    // },
     
       goBack() {
       this.$router.replace('/Info')
