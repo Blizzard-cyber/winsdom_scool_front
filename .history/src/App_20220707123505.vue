@@ -5,8 +5,6 @@
 </template>
 
 <script>
-import { Alert } from 'view-design';
-
 export default {
   name: 'app',
   mounted() {

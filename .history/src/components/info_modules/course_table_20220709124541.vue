@@ -259,7 +259,7 @@
     data() {
       return {
        books:[],
-        semester:'',
+        semester:1,
         drawer: false,
         pStyle: {
          fontSize: '24px',
@@ -435,7 +435,7 @@
       let cookie_id = this.$cookie.get('ID');
       let coursetable=[]
       this.$axios.get('http://127.0.0.1:8080/courseTable/' + cookie_id + '/' + this.semester).then(res => {
-         this.semester=res.data[0].semester;
+           this.semester=res.data.semester;
         for (let i = 0; i < res.data.length; i++) {
           let course = {};
           //console.log(course);

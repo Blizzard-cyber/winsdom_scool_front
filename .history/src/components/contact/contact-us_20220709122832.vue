@@ -23,9 +23,9 @@
           <p class="contact-us-r"> 开发者邮箱：369476975@qq.com</p>
           <p class="contact-us-r"> 项目经理：柴瑞坤</p>
           <p class="contact-us-r"> 前端开发：王涛</p>
-          <p class="contact-us-r"> 后端开发：王继鸿、柴瑞坤</p>
-          <p class="contact-us-r"> 数据收集：何思维、赵宏图、杨凯杰</p>
-         <a href="https://github.com/Blizzard-cyber/winsdom_scool_front" class="contact-us-r">项目地址</a>  
+          <p class="contact-us-r"> 后端开发：王继鸿</p>
+
+           
         </div>
         <img src="../../../static/img/logolo.png" alt="">
         </div>

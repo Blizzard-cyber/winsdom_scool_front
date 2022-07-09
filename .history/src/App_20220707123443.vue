@@ -5,12 +5,10 @@
 </template>
 
 <script>
-import { Alert } from 'view-design';
-
 export default {
   name: 'app',
   mounted() {
-    
+    console.log('this.$cookie.get("ID")')
   }
 }
 </script>
