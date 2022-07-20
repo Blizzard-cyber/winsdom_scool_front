@@ -2,7 +2,7 @@
   <div class="main flex-col flex-x-center flex-y-center">
     <div class="center">
       <!--头部-->
-         <div v-if="login">
+      <div v-if="login">
         <my-head/>
       </div>
       <div v-else>
